@@ -48,7 +48,7 @@ for index,row in df.iterrows():
 
 
 
-df.to_csv("/Users/sriram/projects/ML/impl/lin_reg/data_smaller.csv")
+df.to_csv("data_smaller.csv")
 np.savetxt("weights.csv",weights,delimiter=",")
     
 
