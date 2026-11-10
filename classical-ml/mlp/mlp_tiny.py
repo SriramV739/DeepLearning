@@ -54,15 +54,18 @@ class MLP:
 
     def MSEloss(pred,target):
         return ((pred-target)**2)/2
+
+
+
+        
     
     def backward(self, x1, x2, target):
-        # self.forward_pass(x1,x2)
-        # loss=self.MSEloss(self.y,target)
+        
         
         #calculating all the gradients by hand and hard encoding them
         
-        der_y=self.y-target
-        der_o=der_y*self.y*(1-self.y)                  # this is equaivalent to the actual chain rule calculation: der_y*(1/((1+np.exp(-(self.o)))**2))*np.exp()
+        # der_y=self.y-target
+        der_o=self.y-target                 # this is equaivalent to the actual chain rule calculation: der_y*(1/((1+np.exp(-(self.o)))**2))*np.exp()
         
         
         self.der_w9=der_o*self.N3
@@ -134,7 +137,7 @@ arr=[
 
 
 import random
-for epoch in range(100000):
+for epoch in range(1000001):
     ind=random.randint(0,3)
     m.forward_pass(arr[ind][0],arr[ind][1])
     m.backward(arr[ind][0],arr[ind][1],arr[ind][2])
